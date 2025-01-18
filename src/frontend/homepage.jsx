@@ -9,7 +9,7 @@ function Homepage() {
     const [message, setMessage] = useState('');
   
     useEffect(() => {
-      axios.get('http://localhost:5173/api/data')
+      axios.get('http://localhost:5000/api/data')
         .then(response => {
           setMessage(response.data.message);
         })
@@ -32,7 +32,8 @@ function Homepage() {
           </div>
         </div>
         <div className="right-side">
-          <button onClick={() => setCount((count) => count + 1)}>Login</button>
+            
+          <button onClick={() => navigate('src/frontend/UserDashboard.jsx')}>Login</button>
           <button onClick={() => setCount((count) => count + 1)}>Sign up</button>
           <p className="read-the-docs">
             Welcome to MicroMingle!
