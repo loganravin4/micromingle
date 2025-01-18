@@ -9,7 +9,7 @@ load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "../../.env"))
 app = Flask(__name__)
 CORS(app)
 
-client = MongoClient(os.getenv('MONGODB_URI'))
+client = MongoClient(os.getenv('MONGODB_URL'))
 db = client['DB_NAME']
 collection = db['SmallCap']
 
