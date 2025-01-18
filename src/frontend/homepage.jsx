@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-import './App.css';
+import './homepage.css';
 
 function Homepage() {
   const [count, setCount] = useState(0);
@@ -28,8 +28,8 @@ function Homepage() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>MicroMingle</h1>
-      <div className="card">
+      <h1 class="specialHeader"> MicroMingle</h1>
+      <div class="card">
         
         <p>
           MicroMingle is a website used to allow people to round up their spendings and then invest that excess cash 
@@ -37,9 +37,7 @@ function Homepage() {
           population to 
 
         </p>
-        <p className="read-the-docs">
-          {message ? `Message from Flask: ${message}` : 'Loading message...'}
-        </p>
+        
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
