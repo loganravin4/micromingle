@@ -1,55 +1,9 @@
-/* h1.specialHeader {
-    padding-bottom: 10px;
-    text-align: left;
-}
-
-.card > p {
-    text-align: left;
-    width:50%;
-    display: table-cell;
-    float: left;
-    margin-right: 10px;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-*/
-
-/* homepage.css */
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     display: flex;
     height: 100vh;
-    background-color: #f0f8ff; /* Light blue background for the entire page */
+    background-color: #333333; 
   }
   
   .container {
@@ -61,9 +15,10 @@ body {
   
   .left-side {
     width: 50%;
-    background-color: #fff5e6; /* Soft peach color for the left side */
+    background-color: #222222; 
     padding: 20px;
     box-sizing: border-box;
+    border-radius: 15px;
   }
   
   .right-side {
@@ -72,33 +27,37 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #e6f7ff; /* Light blue for the right side */
+    background-color: #222222; 
+    border-radius: 15px;
   }
   
   .specialHeader {
     font-size: 2.5rem;
     text-align: center;
-    color: #ff7f50; /* Coral color for the header */
+    color: #32CD32; 
     margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   
   .card {
     margin-top: 20px;
     font-size: 1.2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     line-height: 1.6;
-    color: #333333; /* Dark gray text */
-    background-color: #fffaf0; /* Floral white background for the card */
+    color: #fff9f9; 
+    background-color: #333333; 
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for the card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-radius: 15px;
   }
   
   button {
     margin: 10px 0;
     padding: 10px 20px;
     font-size: 1rem;
-    color: #ffffff; /* White text */
-    background-color: #007bff; /* Blue background */
+    color: #000000; 
+    background-color: #32CD32; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -106,13 +65,13 @@ body {
   }
   
   button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    background-color: #0056b3; 
+    transform: scale(1.05); 
   }
   
   .read-the-docs {
     margin-top: 20px;
-    color: #777777; /* Light gray text */
+    color: #777777; 
     font-size: 0.9rem;
     font-style: italic;
   }
