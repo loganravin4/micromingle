@@ -76,4 +76,9 @@ body {
     font-style: italic;
   }
   
-  
+  .cards-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: auto;
+  }
