@@ -1,6 +1,31 @@
 .cards-container {
-    position: relative;
-    width: 300px;
-    height: 400px;
-    margin: auto;
-  }
+    position: relative; /* Required for stacking children */
+    width: 300px; /* Fixed width for cards */
+    height: 400px; /* Fixed height for cards */
+    margin: auto; /* Center horizontally */
+    overflow: hidden; /* Prevent swiped cards from causing scrollbars */
+    background-color: rgba(0, 0, 0, 0.2); /* Optional background for visibility */
+    border-radius: 20px; /* Match the card's border radius */
+}
+
+.interested-companies-section {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #1a720b;
+    border-radius: 10px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.interested-companies-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.interested-companies-section li {
+    margin: 5px 0;
+    font-size: 1rem;
+    font-weight: bold;
+}

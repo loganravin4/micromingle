@@ -17,7 +17,7 @@ function UserDashboard() {
   }, []); 
 
   const investNow = () => {
-    window.location.href = '/Invest';
+    window.location.href = '/tinder';
   };
    
   return (
