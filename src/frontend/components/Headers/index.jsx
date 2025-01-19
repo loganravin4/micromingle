@@ -3,10 +3,8 @@ import Callout from "plaid-threads/Callout";
 import Button from "plaid-threads/Button";
 import InlineLink from "plaid-threads/InlineLink";
 
-import Link from "../Link";
+import Link from "../../Link";
 import Context from "../../Context";
-
-import styles from "./index.module.scss";
 
 const Header = () => {
   const {
@@ -22,15 +20,13 @@ const Header = () => {
   } = useContext(Context);
 
   return (
-    <div className={styles.grid}>
-      <h3 className={styles.title}>Plaid Quickstart</h3>
+    <div>
+      <h3>Plaid Quickstart</h3>
 
       {!linkSuccess ? (
         <>
-          <h4 className={styles.subtitle}>
-            A sample end-to-end integration with Plaid
-          </h4>
-          <p className={styles.introPar}>
+          <h4>A sample end-to-end integration with Plaid</h4>
+          <p>
             The Plaid flow begins when your user wants to connect their bank
             account to your app. Simulate this by clicking the button below to
             launch Link - the client-side component that your users will
@@ -78,14 +74,14 @@ const Header = () => {
               </div>
               <div>Error Message: {linkTokenError.error_message}</div>
             </Callout>
-          ) : linkToken === "" ? (
-            <div className={styles.linkButton}>
+          ) : linkToken === null ? (
+            <div>
               <Button large disabled>
                 Loading...
               </Button>
             </div>
           ) : (
-            <div className={styles.linkButton}>
+            <div>
               <Link />
             </div>
           )}
@@ -94,7 +90,7 @@ const Header = () => {
         <>
           {isPaymentInitiation ? (
             <>
-              <h4 className={styles.subtitle}>
+              <h4 c>
                 Congrats! Your payment is now confirmed.
                 <p />
                 <Callout>
@@ -108,7 +104,7 @@ const Header = () => {
                   .
                 </Callout>
               </h4>
-              <p className={styles.requests}>
+              <p>
                 Now that the 'payment_id' stored in your server, you can use it
                 to access the payment information:
               </p>
@@ -116,7 +112,7 @@ const Header = () => {
           ) : (
             /* If not using the payment_initiation product, show the item_id and access_token information */ <>
               {isItemAccess ? (
-                <h4 className={styles.subtitle}>
+                <h4>
                   Congrats! By linking an account, you have created an{" "}
                   <InlineLink
                     href="http://plaid.com/docs/quickstart/glossary/#item"
@@ -127,40 +123,38 @@ const Header = () => {
                   .
                 </h4>
               ) : userToken ? (
-                <h4 className={styles.subtitle}>
-                  Congrats! You have successfully linked data to a User.
-                </h4>
+                <h4>Congrats! You have successfully linked data to a User.</h4>
               ) : (
-                <h4 className={styles.subtitle}>
+                <h4>
                   <Callout warning>
                     Unable to create an item. Please check your backend server
                   </Callout>
                 </h4>
               )}
-              <div className={styles.itemAccessContainer}>
+              <div>
                 {itemId && (
-                  <p className={styles.itemAccessRow}>
-                    <span className={styles.idName}>item_id</span>
-                    <span className={styles.tokenText}>{itemId}</span>
+                  <p>
+                    <span>item_id</span>
+                    <span>{itemId}</span>
                   </p>
                 )}
 
                 {accessToken && (
-                  <p className={styles.itemAccessRow}>
-                    <span className={styles.idName}>access_token</span>
-                    <span className={styles.tokenText}>{accessToken}</span>
+                  <p>
+                    <span>access_token</span>
+                    <span>{accessToken}</span>
                   </p>
                 )}
 
                 {userToken && (
-                  <p className={styles.itemAccessRow}>
-                    <span className={styles.idName}>user_token</span>
-                    <span className={styles.tokenText}>{userToken}</span>
+                  <p>
+                    <span>user_token</span>
+                    <span>{userToken}</span>
                   </p>
                 )}
               </div>
               {(isItemAccess || userToken) && (
-                <p className={styles.requests}>
+                <p>
                   Now that you have {accessToken && "an access_token"}
                   {accessToken && userToken && " and "}
                   {userToken && "a user_token"}, you can make all of the
