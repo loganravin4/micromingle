@@ -25,7 +25,6 @@ function UserDashboard() {
       <h1 className="page-title">Portfolio Overview</h1>
 
       <div className="content">
-        {/* Left section */}
         <div className="top-left">
           <div>
             <strong>Investable Money:</strong> ${investableMoney}
@@ -51,8 +50,6 @@ function UserDashboard() {
             </ul>
           </div>
         </div>
-t
-        {/* Right section */}
         <div className="tracking-section">
           <h2>Tracking Your Portfolio</h2>
           <p>See how your investments are doing so far!</p>

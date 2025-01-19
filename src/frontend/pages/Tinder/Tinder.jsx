@@ -4,32 +4,29 @@ import TinderCard from '../../components/TinderCard/TinderCard';
 import './Tinder.css';
 
 function Tinder() {
-    const [cards, setCards] = useState([]); // State to hold cards data
-    const [interestedCompanies, setInterestedCompanies] = useState([]); // State for interested companies
+    const [cards, setCards] = useState([]);
+    const [interestedCompanies, setInterestedCompanies] = useState([]);
 
-    // Fetch data from the backend using axios
     useEffect(() => {
         axios
-            .get('http://localhost:5000/api/data') // Assuming your backend is running on the same origin
+            .get('http://localhost:5000/api/data')
             .then((response) => {
-                // Transform the fetched data if necessary
                 const transformedData = response.data.map((item, index) => ({
                     id: index,
-                    image: 'https://via.placeholder.com/150', // Default placeholder image
-                    color: '#228B22', // Default background color
-                    name: item.name, // Separate name for displaying
-                    text: `${item.name} - ${item.price}: ${item.description}`, // Use backend data
+                    image: 'https://via.placeholder.com/150',
+                    color: '#228B22',
+                    name: item.name,
+                    text: `${item.name} - ${item.price}: ${item.description}`,
                 }));
-                setCards(transformedData); // Update state with transformed data
+                setCards(transformedData);
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
             });
     }, []);
 
-    // Function to handle swiping right
     const handleSwipeRight = (card) => {
-        setInterestedCompanies((prev) => [...prev, card]); // Add card to the interested companies list
+        setInterestedCompanies((prev) => [...prev, card]);
     };
 
     return (
@@ -43,7 +40,7 @@ function Tinder() {
                             image={card.image}
                             color={card.color}
                             text={card.text}
-                            onSwipeRight={() => handleSwipeRight(card)} // Pass the swipe right handler
+                            onSwipeRight={() => handleSwipeRight(card)}
                         />
                     ))}
                 </div>

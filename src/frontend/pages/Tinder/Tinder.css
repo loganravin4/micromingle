@@ -1,11 +1,11 @@
 .cards-container {
-    position: relative; /* Required for stacking children */
-    width: 300px; /* Fixed width for cards */
-    height: 400px; /* Fixed height for cards */
-    margin: auto; /* Center horizontally */
-    overflow: hidden; /* Prevent swiped cards from causing scrollbars */
-    background-color: rgba(0, 0, 0, 0.2); /* Optional background for visibility */
-    border-radius: 20px; /* Match the card's border radius */
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
 }
 
 .interested-companies-section {

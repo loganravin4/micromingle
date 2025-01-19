@@ -22,12 +22,12 @@ const TinderCard = ({ image, color, text, onSwipeRight }) => {
             dragConstraints={{ left: -1000, right: 1000 }}
             onDragEnd={(event, info) => {
                 if (Math.abs(info.offset.x) <= 150) {
-                    animationControls.start({ x: 0 }); // Snap back to center
+                    animationControls.start({ x: 0 });
                 } else {
                     const direction = info.offset.x > 0 ? 1000 : -1000;
                     animationControls.start({ x: direction }).then(() => {
                         if (direction > 0 && onSwipeRight) {
-                            onSwipeRight(); // Trigger swipe right callback
+                            onSwipeRight();
                         }
                     });
                 }
