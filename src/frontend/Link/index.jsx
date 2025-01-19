@@ -1,15 +1,15 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useCallback } from "react";
 import { usePlaidLink } from "react-plaid-link";
 import Button from "plaid-threads/Button";
 
-import Context from "../../Context";
+import Context from "../Context";
 
 const Link = () => {
   const { linkToken, isPaymentInitiation, isCraProductsExclusively, dispatch } =
     useContext(Context);
 
-  const onSuccess = React.useCallback(
-    (public_token: string) => {
+  const onSuccess = useCallback(
+    (public_token) => {
       // If the access_token is needed, send public_token to server
       const exchangePublicTokenForAccessToken = async () => {
         const response = await fetch("/api/set_access_token", {
@@ -58,14 +58,12 @@ const Link = () => {
   );
 
   let isOauth = false;
-  const config: Parameters<typeof usePlaidLink>[0] = {
-    token: linkToken!,
+  const config = {
+    token: linkToken,
     onSuccess,
   };
 
   if (window.location.href.includes("?oauth_state_id=")) {
-    // TODO: figure out how to delete this ts-ignore
-    // @ts-ignore
     config.receivedRedirectUri = window.location.href;
     isOauth = true;
   }
