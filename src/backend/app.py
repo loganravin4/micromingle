@@ -78,17 +78,20 @@ item_id = None
 
 # MongoDB setup
 client = MongoClient(os.getenv('MONGODB_URL'))
-db = client['DB_NAME']
-collection = db['DB_COLLECTION']
+db = client[os.getenv('DB_NAME')]
+collection = db[os.getenv('DB_COLLECTION')]
 
 # MongoDB endpoints
 @app.route('/api/data', methods=['GET'])
 def get_data():
-    data = collection.find_one({})
-    if data:
-        return jsonify({"message": data.get("message")})
-    else:
-        return jsonify({"message": "No data found"})
+    try:
+        data = list(collection.find({}, {"ticker": 0, "_id": 0}))
+
+        return jsonify(data)
+    except Exception as e:
+        print(f"Error fetching data: {e}")
+        return jsonify({"error": str(e)})
+
 
 @app.route('/api/data', methods=['POST'])
 def add_data():
