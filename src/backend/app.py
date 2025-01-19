@@ -79,7 +79,7 @@ item_id = None
 # MongoDB setup
 client = MongoClient(os.getenv('MONGODB_URL'))
 db = client['DB_NAME']
-collection = db['SmallCap']
+collection = db['DB_COLLECTION']
 
 # MongoDB endpoints
 @app.route('/api/data', methods=['GET'])

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './UserDashboard.css';
-
 function UserDashboard() {
   const [investableMoney, setInvestableMoney] = useState(null);
   const [moneyInPortfolio, setMoneyInPortfolio] = useState(null);

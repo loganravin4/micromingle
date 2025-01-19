@@ -75,10 +75,3 @@ body {
     font-size: 0.9rem;
     font-style: italic;
   }
-  
-  .cards-container {
-    position: relative;
-    width: 300px;
-    height: 400px;
-    margin: auto;
-  }

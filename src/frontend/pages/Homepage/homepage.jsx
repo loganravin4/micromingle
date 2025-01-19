@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './homepage.css';
-import TinderCard from './components/TinderCard/TinderCard';
 
 function Homepage() {
     const [message, setMessage] = useState('');
@@ -17,12 +17,6 @@ function Homepage() {
             });
     }, []);
 
-    const cards = [
-        { id: 1, image: 'https://img.icons8.com/color/452/GeeksforGeeks.png', color: '#55ccff', text: 'Small Cap Company 1' },
-        { id: 2, image: 'https://img.icons8.com/color/452/GeeksforGeeks.png', color: '#e8e8e8', text: 'Small Cap Company 2' },
-        { id: 3, image: 'https://img.icons8.com/color/452/GeeksforGeeks.png', color: '#0a043c', text: 'Small Cap Company 3' },
-    ];
-
     return (
         <div className="container">
             <div className="left-side">
@@ -37,23 +31,14 @@ function Homepage() {
                 </div>
             </div>
             <div className="right-side">
+              <Link to="/dashboard">
                 <button onClick={() => console.log('Navigate to login')}>Login</button>
+              </Link>
+              <Link to="/dashboard">
                 <button onClick={() => console.log('Navigate to sign up')}>Sign up</button>
+              </Link>
+                
                 <p className="read-the-docs">Welcome to MicroMingle!</p>
-            </div>
-            <div className="cards-section">
-                <h2>Discover Small Cap Companies</h2>
-                <div className="cards-container">
-                    {cards.map((card, index) => (
-                        <TinderCard
-                            key={card.id}
-                            image={card.image}
-                            color={card.color}
-                            text={card.text}
-                            index={index}
-                        />
-                    ))}
-                </div>
             </div>
         </div>
     );
